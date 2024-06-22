@@ -12,29 +12,40 @@ Welcome to the Loan Application repository! This project contains the frontend a
 
 1. Navigate to the `frontend` directory:
 
-   ```bash
-   cd frontend
+   cd Frontend/loan-app
+
 Install dependencies:
 
 npm install
+
 Running the Development Server
+
 After installing dependencies, start the development server:
 
 npm start
+
 The frontend will be served at http://localhost:4200. Open this URL in your web browser to access the application.
 
-Backend Setup
+
+### Backend Setup
+
 Prerequisites
+
 .NET 5 SDK installed. You can download it from dotnet.microsoft.com/download.
+
 Running the Backend API
+
 Navigate to the backend directory:
 
 
-cd backend
+cd backend/loanAPI
+
 Restore dependencies:
 
 dotnet restore
+
 Run the application:
 
 dotnet run
+
 The backend API will be available at http://localhost:5001.
