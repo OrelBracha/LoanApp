@@ -1,0 +1,38 @@
+<div class="loan-form">
+    <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="clientId">Client ID:</label>
+            <input id="clientId" formControlName="clientId" type="text">
+            <div *ngIf="loanForm.get('clientId')?.invalid && loanForm.get('clientId')?.touched">
+                Client ID is required and must be a number.
+            </div>
+        </div>
+
+        <div>
+            <label for="amount">Amount:</label>
+            <input id="amount" formControlName="amount" type="text">
+            <div *ngIf="loanForm.get('amount')?.invalid && loanForm.get('amount')?.touched">
+                Amount is required and must be a number.
+            </div>
+        </div>
+
+        <div>
+            <label for="periodInMonths">Period (in months):</label>
+            <input id="periodInMonths" formControlName="periodInMonths" type="text">
+            <div *ngIf="loanForm.get('periodInMonths')?.invalid && loanForm.get('periodInMonths')?.touched">
+                Period is required and must be a number.
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="loanForm.invalid">Calculate Loan</button>
+    </form>
+
+    <div *ngIf="loanResult">
+        <h3>Loan Details</h3>
+        <p>Total Amount: {{ loanResult.totalAmount | currency:'ILS':'symbol-narrow' }}</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>
